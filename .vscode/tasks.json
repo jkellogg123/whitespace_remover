@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build exe",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-o",
+                "${fileDirname}/trimmer.exe",
+                "main.cpp",
+				"trim.cpp"
+            ],
+			"group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Build the C++ file into an executable"
+        },
+        // {
+        //     "label": "run exe",
+        //     "type": "shell",
+			
+        //     "command": "${fileDirname}/main.exe",
+        //     "dependsOn": "build exe",
+        //     "problemMatcher": [],
+        //     "detail": "Run the compiled executable"
+        // }
+    ]
+}

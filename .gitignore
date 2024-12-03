@@ -1,4 +1,5 @@
-.vscode
+.vscode/*
+!.vscode/tasks.json
 trimmer_output
 test*
 *.exe

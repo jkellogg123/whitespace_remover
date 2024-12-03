@@ -8,7 +8,7 @@ int main_real(int argc, char* argv[]) {
     }
 
     std::string file_name = argv[1];
-    int result = cpp_clean(file_name);
+    int result = clean(file_name);
 
     if (!result) {
         print("Success!");

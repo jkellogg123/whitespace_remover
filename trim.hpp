@@ -7,11 +7,11 @@
 typedef int charit_t;
 
 template <typename T>
-void print(const T &stuff) {
+void print(const T& stuff) {
     std::cout << stuff << std::endl;
 }
 
-int cpp_clean(const std::string &file_name);
+int clean(const std::string &file_name);
 
 
 #endif  // TRIM_H

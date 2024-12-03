@@ -11,6 +11,7 @@ void print(const T &stuff) {
     std::cout << stuff << std::endl;
 }
 
-void trim(std::string &line);
+int cpp_clean(const std::string &file_name);
+
 
 #endif  // TRIM_H

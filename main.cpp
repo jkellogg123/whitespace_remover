@@ -1,6 +1,5 @@
 #include <iostream>
 #include "trim.hpp"
-#include "cpp_trim.hpp"
 
 int main_real(int argc, char* argv[]) {
     if (argc != 2) {

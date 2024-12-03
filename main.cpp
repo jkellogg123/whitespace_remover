@@ -3,7 +3,7 @@
 
 int main_real(int argc, char* argv[]) {
     if (argc != 2) {
-        std::cerr << "Incorrect usage. Proper usage is: ./script <file (optional)>" << std::endl;
+        std::cerr << "Incorrect usage. Proper usage is: \"trimmer <file>\"" << std::endl;
         return 1;
     }
 

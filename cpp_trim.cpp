@@ -6,7 +6,10 @@
 #include <sstream>
 #include <cassert>
 #include <bitset>
+#include <filesystem>
 #include "trim.hpp"
+
+std::string output_folder = "./output";
 
 bool is_special_char(char c) {
     static std::bitset<256> specials;
@@ -55,6 +58,15 @@ bool is_cpp(const std::string &file_name) {
     return file_name.substr(file_name.size() - 4) == ".cpp";
 }
 
+// true if successful, false if not (only false if trying to create folder fails)
+bool create_output() {
+    if (!std::filesystem::exists(output_folder)) {
+        print("creating output folder...");
+        return std::filesystem::create_directory(output_folder);
+    }
+    return true;
+}
+
 int cpp_clean(const std::string &file_name) {
     assert(is_cpp(file_name));
 
@@ -63,7 +75,11 @@ int cpp_clean(const std::string &file_name) {
         std::cerr << "Error opening in_file!" << std::endl;
         return 1;
     }
-    std::ofstream out_file("output/(CLEAN)" + file_name);
+    if (!create_output()) {
+        std::cerr << "Couldn't create output folder!" << std::endl;
+        return 1;
+    }
+    std::ofstream out_file(output_folder + "/(CLEAN)" + file_name);
     if (!out_file.is_open()) {
         in_file.close();
         std::cerr << "Error opening out_file!" << std::endl;

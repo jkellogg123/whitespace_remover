@@ -1,7 +1,9 @@
 .vscode/*
 !.vscode/tasks.json
+!.vscode/c_cpp_properties.json
 trimmer_output
 test*
 *.exe
 tempCodeRunnerFile*
 input.txt
+save.bat

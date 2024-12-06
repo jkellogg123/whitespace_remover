@@ -6,6 +6,7 @@
             "type": "shell",
             "command": "g++",
             "args": [
+                "-std=c++20",
                 "-o",
                 "${fileDirname}/trimmer.exe",
                 "main.cpp",

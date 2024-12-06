@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-typedef int charit_t;
+extern bool newlineFlag;
 
 template <typename T>
 void print(const T& stuff) {
